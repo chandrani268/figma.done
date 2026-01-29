@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <style>
+        body{
+            padding: 20px;
+            align-items: center;
+
+        }
+        .container {
+         max-width: 500px;
+         margin: auto;
+        }
+        h1{
+            color: deeppink;
+            text-align: center;
+        }
+        .title {
+           display: flex;
+        align-items: center;
+        justify-content: center;
+        color: deeppink;
+        }
+
+         .title::before,
+         .title::after {
+          content: "";
+          flex: 1;
+          height: 1px;
+          background: rgb(77, 70, 70);
+          margin: 0 12px;
+        }
+
+        .box{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            position: relative;
+            overflow: visible;
+            column-gap: 1px;
+            border: 2px solid rgba(128, 128, 128, 0.381);
+            width: 75%;
+            padding: 25px;
+            margin: auto;
+            max-width: 400px;
+            margin-bottom: 20px;
+            height: auto;
+            transition: all 0.3 ease;
+           
+            
+            
+        }
+        
+        
+        .bullet{
+            position: relative;
+        }
+        .right{
+           text-align: right;
+           
+            float: right;
+              font-size: 16px;
+           
+        }
+        
+        h5{
+           padding-right: 0px;
+           color: gray;
+           margin-top: 0px;
+        }
+        .ribbon{
+            position: absolute;
+            top: -5px;
+            right: 4px;
+            background-color: deeppink;
+            color: white;
+            font-size: 12px;
+            border-radius: 0 0 6px 6px;
+            padding: 4px 10px;
+            white-space:nowrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+        }
+        .free{
+            color: deeppink;
+            text-align: left;
+            font-size: 17px;
+            position: absolute;
+            margin-left: 40px;
+            
+
+        }
+        .total {
+      text-align: right;
+      font-weight: bold;
+      margin-top: -10px;
+      margin-bottom: 20px;
+      position: relative;
+      margin-right: 30px;
+      font-size: 18px;
+    }
+
+    .btn {
+      width: 100%;
+      padding:12px;
+      background: #f5628d;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;   
+    }
+      
+    .hidden{
+        display: flex;
+        gap: 10px;
+    }
+        
+    .option{
+        display: flex;
+        flex-direction: column;
+    }
+    input[type="radio"] {
+      margin-right: 8px;
+    }
+    .box.active {
+      border: 2px solid #f5628d;
+      transform: scale(1.1,1.2);
+      box-shadow: 0 0 10px rgba(245, 98, 142, 0.497);
+      background-color: rgba(245, 98, 142, 0.107) ;
+    }
+           
+</style>
+</head>
+<body>
+    
+           <div class="container">
+            <h1 class="title">YAY! It's BOGO</h1>
+             <div class="box" onclick="selectOption(this)">
+            <div class="bullet">
+             <input type="radio" name="Unit" checked id="1"/> <label for="1"><strong>1 Unit</strong></label>
+            <mark style="background-color: deeppink; color: white;"> 10% Off </mark></div>
+           <div class="right">
+            <b><span class="price">$10.00 USD</span></b>
+           <h5><del>$24.00 USD</del></h5></div>
+           <div class="hidden">
+            <div class="option">
+          <label for="Sz">Size</label> 
+           <select name="Size" id="Sz">
+           <option value="">S</option>
+           <option value="">M</option>
+           <option value="">L</option>
+           <option value="">XL</option>
+           <option value="">XXL</option>
+         </select>
+            </div>
+            <div class="option">
+         <label for="clr">Colour</label>
+         <select name="color" id="clr">
+           <option value="">Black</option>
+           <option value="">Brown</option>
+           <option value="">Red</option>
+           </select>
+           </div>
+           </div>
+          
+          </div>
+           
+              
+               <div class="box" onclick="selectOption(this)">
+                
+                <span class="ribbon">MOST POPULAR</span>
+                <div class="bullet">
+           <input type="radio" name="Unit" id="2"/> <label for="2"><strong>2 Unit</strong></label>
+          <mark style="background-color: deeppink; color: white;"> 20% Off </mark></div>
+       <div class="right">
+        <b><span class="price">$18.00 USD</span></b>
+       <h5><del>$24.00 USD</del></h5></div>
+        <div class="hidden">
+            <div class="option">
+              <label for="Sz">Size</label> 
+         <select name="Size" id="Sz">
+           <option value="">S</option>
+           <option value="">M</option>
+           <option value="">L</option>
+           <option value="">XL</option>
+           <option value="">XXL</option>
+           </select>
+           </div>
+           <div class="option">
+           <label for="clr">Colour</label>
+          <select name="color" id="clr">
+           <option value="">Black</option>
+           <option value="">Brown</option>
+           <option value="">Red</option></select>
+           </div>
+        </div>
+               </div>
+    
+     
+     
+    <div class="box" onclick="selectOption(this)">
+        
+        <div class="bullet">
+<input type="radio" name="Unit"  id="3" /> <label for="3"><strong>3 Unit</strong>
+    <mark style="background-color: deeppink; color: white;"> 30% Off </mark></div>
+       <div class="right">
+       <b><span class="price">$24.00 USD</span></b>
+       <h5><del>$24.00 USD</del></h5></div>
+    <div class="hidden">
+        <div class="option">
+   <label for="Sz">Size</label> 
+
+<select name="Size" id="Sz">
+<option value="">S</option>
+<option value="">M</option>
+<option value="">L</option>
+<option value="">XL</option>
+<option value="">XXL</option>
+</select>
+        </div>
+<div class="option">
+<label for="clr">Colour</label>
+<select name="color" id="clr">
+<option value="">Black</option>
+<option value="">Brown</option>
+<option value="">Red</option>
+</select>
+</div>
+    </div>
+</div>
+    
+    <div class="free">Free Delivery</div>
+  <div class="total">Total : $18.00 USD</div>
+
+  <button class="btn">+ Add to Cart</button>
+
+
+    <script>
+       function selectOption(selected) {
+    const options = document.querySelectorAll('.box');
+    options.forEach(option => {
+      option.classList.remove('active');
+      option.querySelector('input[type="radio"]').checked = false;
+    });
+    selected.classList.add('active');
+    selected.querySelector('input[type="radio"]').checked = true;
+  }
+        
+    
+</script>
+    </body>
+</html>
